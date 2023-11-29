@@ -5,4 +5,3 @@ var dulha = "Lab"
 var dulhan = "Laby"
 
 console.log()
-p

@@ -1,48 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Addition</title>
     <style>
-        .contain{
-            text-align: center;
-        }
-        #result{
-            width: 200px;
-            height: 200px;
-            border-radius: 70px 40px;
-            border: 5px solid darkcyan;
-            margin: 0 auto;
-            margin-top: 40px;
-        }
-    </style>
-</head>
-<body>
-    <div class="main_container">
-        <div class="contain">
-            <label for="">First</label>
-            <input type="number" name="" id="first">
-            <br><br>
-            <label for="">Second</label>
-            <input type="number" name="" id="second">
-            <br><br>
-            <button onclick="add()">Result</button>
-            <div id="result"></div>
-        </div>
-    </div>
-</body>
-    <script>
-        function add() {
-            let a = parseInt(document.getElementById("first").value)
-            let b = parseInt(document.getElementById("second").value)
-            let sum = a + b
-            document.getElementById('result').innerText = sum;
-            console.log(a+b);
-
-
-
+      .contain {
+        text-align: center;
       }
-
-    </script>
+      #result {
+        width: 200px;
+        height: 200px;
+        border-radius: 70px 40px;
+        border: 5px solid darkcyan;
+        margin: 0 auto;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main_container">
+      <div class="contain">
+        <label for="">First</label>
+        <input type="number" name="" id="first" />
+        <br /><br />
+        <label for="">Second</label>
+        <input type="number" name="" id="second" />
+        <br /><br />
+        <button onclick="add()">Result</button>
+        <div id="result"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function add() {
+      let a = parseInt(document.getElementById("first").value);
+      let b = parseInt(document.getElementById("second").value);
+      let sum = a + b;
+      document.getElementById("result").innerText = sum;
+      console.log(a + b);
+    }
+  </script>
 </html>
