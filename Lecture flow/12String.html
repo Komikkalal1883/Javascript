@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String in JS</title>
+</head>
+<body>
+    <script>
+        let a = "     Namaste Bharat     "
+        let b = 10;
+        console.log(a);
+        console.log(a.length);
+        console.log(a.indexOf('B'));   // Index of B
+        console.log(a.indexOf('b'));  // Returns the index within the calling String object of
+        //                               the first occurrence of searchValue, or -1 if not found.
+        console.log(a.toUpperCase());
+        console.log(a.toLowerCase());
+        console.log(a.concat(' Mata'));
+        console.log(a.charAt(5));     // Returns the character (exactly one UTF-16 code unit) at the specified index
+        console.log(a.charCodeAt(5));   // Returns a number that is the UTF-16 code unit value at the given index
+        console.log(a.replace('Namaste', 'Jai Ho'));
+        console.log(b.toString());
+        console.log(typeof b.toString());
+        console.log(a.trim());
+
+    </script>
+</body>
+</html>

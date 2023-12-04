@@ -78,7 +78,7 @@
     <div class="maincontanier">
       <div class="container">
         <div class="firstNo" id="first">First Number</div>
-        <div class="SecondNo">Second Number</div>
+        <div id="Second" class="SecondNo">Second Number</div>
       </div>
       <div class="InputFrist">Input First 
         <input type="text" name="" id="">
@@ -87,18 +87,22 @@
         <input type="text" name="" id="">
       </div>
         <div class="flex">
-            <button>+</button>
+            <button onclick="add()">+</button>
             <button>-</button>
             <button>*</button>
             <button>/</button>
         </div>
-        <div class="result">Result</div>
+        <div id="result" class="result">Result</div>
     </div>
   </body>
   <script>
     function add(){
       let a = parseInt(document.getElementById("first").value)
+      let b = parseInt(document.getElementById("Second").value)
+      let Sum = a + b 
+      document.getElementById("result").innerText = Sum;
       
+      console.log (a+b);
     }
   </script>
 </html>
