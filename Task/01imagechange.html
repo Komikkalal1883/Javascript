@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Change</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .main{
+        text-align: center;
+      }
+      img {
+        height: 300px;
+        width: 300px;
+      }
+      button {
+        margin-top: 10px;
+        height: 30px;
+        width: 150px;
+        border-radius: 5px;
+        border: 1px solid black;
+        background-color: #000;
+        color: #fff;
+        font-size: 15px;
+        font-family: sans-serif;
+        cursor: pointer;
+        margin-left: 80px;
+      }
+      #second{
+        display: none;
+      }
+      #frist{
+        margin-left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+        <img
+          id="frist"
+          src="./image/Place Your Image Here (Double Click to Edit).png"
+          alt=""
+        />
+        <img
+          id="second"
+          src="./image/benjamin-davies-Zm2n2O7Fph4-unsplash.jpg"
+          alt=""
+        />
+        <br />
+      <button onclick="changeimage()">Image Change</button>
+    </div>
+  </body>
+  <script>
+        function changeimage(){
+            var fristimage = document.getElementById("frist");
+            var secondimage = document.getElementById("second");
+
+            var hi =fristimage.src;
+            fristimage.src = secondimage.src;
+            secondimage.src = hi;
+
+            // fristimage,secondimage=secondimage,fristimage;
+        }
+  </script>
+</html>

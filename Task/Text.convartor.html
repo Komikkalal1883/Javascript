@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentence Manipulation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            margin: 0 auto;
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 2px 1px 1px 1px rgba(0, 0, 0, 0.2);
+            width: 700px;
+            height: 500px;
+            margin-top: 80px;
+            position: relative;
+        }
+        .sentence input{
+            position: absolute;
+            margin-left: 50px;
+            margin-top: 30px;
+            width: 600px;
+            height: 100px;
+            font-size: larger;
+        }
+        .action button{
+           padding: 20px 10px;
+           margin-top: 150px;
+           margin-left: 5px;
+           outline: none;
+           border-radius: 5px;
+           background-color: cadetblue;
+        }
+        #preview{
+            width: 500px;
+            height: 100px;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin-left: 100px;
+            margin-top: 40px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="sentence">
+            <input type="text" class="dynamic" id="First">
+        </div>
+        <div class="action">
+            <button onclick="uppercase()">Upper Case</button>
+            <button onclick="lowercase()">Lower Case</button>
+            <button onclick="trimText()">Trim</button>
+            <button onclick="clearText()">Clear</button>
+            <button onclick="removeSpace()">Remove Space</button>
+            <button onclick="countWords()">Count Words</button>
+            <button onclick="countAlphabets()">Count Alphabets</button>
+        </div>
+        <div id="preview"></div>
+    </div>
+
+    <script>
+        function uppercase() {
+            let text = document.getElementById("First").value;
+            let upper = text.toUpperCase();
+            document.getElementById('preview').innerText = upper;
+        }
+
+        function lowercase() {
+            let text = document.getElementById("First").value;
+            let lower = text.toLowerCase();
+            document.getElementById('preview').innerText = lower;
+        }
+
+        function trimText() {
+            let text = document.getElementById("First").value;
+            let trimmed = text.trim();
+            document.getElementById('preview').innerText = trimmed;
+        }
+
+        function clearText() {
+            document.getElementById('First').value = '';
+            document.getElementById('preview').innerText = '';
+        }
+
+        function removeSpace() {
+            let text = document.getElementById("First").value;
+            let withoutSpace = text.replace(/\s/g, '');
+            document.getElementById('preview').innerText = withoutSpace;
+        }
+
+        function countWords() {
+            let text = document.getElementById("First").value;
+            let words = text.split(/\s+/).filter(function(word) {
+                return word.length > 0;
+            });
+            document.getElementById('preview').innerText = words.length + ' words';
+        }
+
+        function countAlphabets() {
+            let text = document.getElementById("First").value;
+            let alphabets = text.match(/[a-zA-Z]/g);
+            document.getElementById('preview').innerText = alphabets ? alphabets.length + ' alphabets' : '0 alphabets';
+        }
+    </script>
+</body>
+</html>

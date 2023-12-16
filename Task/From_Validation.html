@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>From Validation</title>
+  </head>
+  <body>
+    <form>
+      <div class="From">
+        <label for="">User Name</label>
+        <input onblur="raj()" type="text" name="" id="text01" />
+        <span id="error01"></span>
+        <br /><br />
+        <label for="">password</label>
+        <input onblur="Validation()" type="password" name="" id="text02" />
+        <span id="error02"></span>
+      </div>
+    </form>
+  </body>
+  <script>
+    function raj() {
+      let user = document.getElementById("text01").value;
+      console.log(user);
+
+      if (user == "") {
+        document.getElementById("error01").innerText = "Plese write Your name";
+      }
+    }
+    function Validation() {
+      let user = document.getElementById("text01").value;
+      console.log(user);
+
+      if (user == "") {
+        document.getElementById("error02").innerText = "Plese write Your name";
+      }
+    }
+  </script>
+</html>

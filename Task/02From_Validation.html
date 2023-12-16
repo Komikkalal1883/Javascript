@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> From Validation</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: antiquewhite;
+            color: rebeccapurple;
+        }
+        .container{
+            height: 500px;
+            width: 700px;
+            /* border: 2px solid black; */
+            margin: 50px auto;
+            box-shadow:  2px 5px 5px 4px rgb(232, green, blue);
+        }
+        div{
+            text-align: center;
+        }
+        input{
+            margin-left: 10px;
+        }
+        .content{
+            padding: 100px;
+        }
+        .input02{
+            margin-left: 10px;
+        }
+        .input03{
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>USER FROM</h1>
+    <div class="container">
+        <div class="content">
+
+            <div>
+                <label for="">User Name :</label>
+                <input type="text" name="" id="uname" onblur="handleValidation(this, 'error1', 'User Name')">
+                <span id="error01"></span>
+            </div>
+            <br> 
+            <div class="input02">
+                <label for="">Password :</label>
+                <input type="text" name="" id="uname"
+                onblur="handleValidation(this, 'error2', 'Password')">
+                <span id="error02"></span>
+            </div>
+            <br>
+            <div class="input03">
+                <label for="">Age :</label>
+                <input type="text" name="" id="uname"
+                onblur="handleValidation(this, 'error3', 'Age')">
+                <span id="error03"></span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function handleValidation( kommik, Aushutosh, sanjay ){
+        console.log( kommik );
+        console.log( Aushutosh );
+        console.log( sanjay );
+        let userName = document.getElementById("uname").value
+        console.log(userName);
+        if(userName == ""){
+            document.getElementById(komik).innerText = "Please Enter User Name" + Aushutosh + sanjay;
+        }
+    }
+</script>
+</html>
