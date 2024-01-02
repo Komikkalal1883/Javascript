@@ -1,46 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Text Convertor 02</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Convertor 02</title>
     <style>
-        .Container{
-            margin: 0 auto;
-            margin-top: 80px;
-            height: 500px;
-            width: 900px;
-            border: 1px solid black;
-        }
-        #text01{
-            height: 150px;
-            width: 750px;
-            border: 2px solid brown;
-            border-radius: 5px;
-        }
-        .content01{
-            text-align: center;
-            margin-top: 10px;
-        }
+      h1{
+        text-align: center;
+        color: brown;
+      }
+      .Container {
+        margin: 0 auto;
+        margin-top: 10px;
+        height: 480px;
+        width: 1000px;
+        border: 1px solid black;
+        box-shadow: 3px 10px 10px 1px rgba(88, 175, 207, 0.9);
+      }
+      #text01 {
+        height: 150px;
+        width: 750px;
+        border: 2px solid brown;
+        border-radius: 5px;
+        font-size: larger;
+      }
+      .content01 {
+        text-align: center;
+        margin-top: 10px;
+      }
+      .buttons {
+        margin-top: 30px;
+        text-align: center;
+      }
+      button {
+        height: 42px;
+        width: 125px;
+        font-size: 14px;
+        font-weight: 550;
+        border: none;
+        border-radius: 10px;
+        background-color: #265073;
+        color: aliceblue;
+      }
+      #content02 {
+        height: 150px;
+        width: 750px;
+        border: 2px solid brown;
+        border-radius: 5px;
+        margin: 0 auto;
+        margin-top: 20px;
+        padding-left: 0;
+        padding-top: 30px;
+        font-size: larger;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <h1>Text Convertor</h1>
     <div class="Container">
-        <div class="content01">
-            <input type="text" name="" id="text01">
-        </div>
+      <div class="content01">
+        <input type="text" name="" id="text01" />
+      </div>
+      <div class="buttons">
+        <button onclick="uppercase()">Upper Case</button>
+        <button onclick="lowercase()">Lower Case</button>
+        <button onclick="trim()">Trim</button>
+        <button onclick="CountWord()">Count Word</button>
+        <button onclick="CountAlphabets()">Conut Alphabets</button>
+        <button onclick="RemoveSpace()">Remove Space</button>
+        <button onclick="clear()">Clear</button>
+      </div>
+      <div id="content02"></div>
     </div>
-</body>
+  </body>
 
-    <script>
-    
-        // Conditional Statements
+  <script>
+    // Conditional Statements
 
+    function uppercase() {
+      let text = document.getElementById("text01").value;
+      let upper = text.toUpperCase();
+      document.getElementById("content02").innerText = upper;
+    }
 
-        
+    function lowercase() {
+      let text = document.getElementById("text01").value;
+      let lower = text.toLowerCase();
+      document.getElementById("content02").innerText = lower;
+    }
 
+    function trim() {
+      let text = document.getElementById("text01").value;
+      let trimmed = text.trim();
+      document.getElementById("content02").innerText = trimmed;
+    }
 
-    </script>
+    function CountWord() {
+      let text = document.getElementById("text01").value;
+      let words = text.split(/\s+/).filter(function (word) {
+        return word.length > 0;
+      });
+      document.getElementById("content02").innerText = words.length + " Words";
+    }
 
+    function CountAlphabets() {
+      let text = document.getElementById("text01").value;
+      let alphabets = text.match(/[a-zA-Z]/g);
+      document.getElementById("content02").innerText = alphabets
+        ? alphabets.length + "      Alphabets"
+        : "0 alphabets";
+    }
 
+    function RemoveSpace() {
+      let text = document.getElementById("text01").value;
+      let withoutSpace = text.replace(/\s/g, "");
+      document.getElementById("content02").innerText = withoutSpace;
+    }
+
+    function clear() {
+      document.getElementById("text01").value = "";
+      document.getElementById("content02").innerText = "";
+    }
+  </script>
 </html>
